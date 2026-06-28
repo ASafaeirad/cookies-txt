@@ -17,12 +17,6 @@ export default defineManifest({
     },
     default_popup: 'src/popup/index.html',
   },
-  content_scripts: [
-    {
-      js: ['src/content/main.js'],
-      matches: ['https://*/*', 'http://*/*'],
-      run_at: 'document_start',
-    },
-  ],
-  permissions: ['storage', 'activeTab'],
+  permissions: ['cookies', 'activeTab'],
+  host_permissions: ['<all_urls>'],
 });

@@ -4,14 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Cookies TXT</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <main class="panel">
       <header class="header">
-        <div>
-          <h1>Cookies TXT</h1>
-        </div>
+        <img src="/public/logo.png" alt="Cookies TXT" class="logo" />
+        <h1>Cookies.txt</h1>
       </header>
+
+      <div class="domain-row">
+        <span class="domain-label">Domain</span>
+        <span class="domain-value" id="domain">—</span>
+      </div>
+
+      <div class="count-row" id="count-row" hidden>
+        <span id="cookie-count">0</span>
+        cookies found
+      </div>
+      <div class="actions">
+        <button type="button" class="btn btn-primary" id="btn-copy" disabled>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <title>Copy</title>
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          Copy to clipboard
+        </button>
+        <button type="button" class="btn btn-secondary" id="btn-download" disabled>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <title>Download</title>
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download cookies.txt
+        </button>
+      </div>
+
+      <div class="toast" id="toast" aria-live="polite"></div>
+
+      <div class="empty" id="empty" hidden>No cookies found for this page.</div>
     </main>
     <script type="module" src="./main.js"></script>
   </body>
